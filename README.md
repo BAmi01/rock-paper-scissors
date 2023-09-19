@@ -1,2 +1,2 @@
 # rock-paper-scissor-game
-Project Portfolio
+in this project i used python as my preferred language 
