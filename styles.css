@@ -11,3 +11,24 @@ button {
     padding: 5px 10px;
     font-size: 16px;
 }
+.character {
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.character img {
+    width: 89px; 
+    height: auto;
+    margin: 10px;
+    opacity: 1; /* Set default opacity to fully visable */
+}
+
+.character.selected-character img {
+    opacity: 1; /* Ensure selected character is fully visable */
+}
+
+.character:not(.selected-character) img {
+    opacity: 0.5; /* Fade out unselecte characters */
+}
