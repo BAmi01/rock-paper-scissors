@@ -60,6 +60,17 @@ function chooseCharacter(character) {
     playerCharacter = character;
     document.getElementById("characterSelection").style.display = "none"; // Hide character selection after choosing 
     updatePlayerOneName(character); // Update Player One name with selescted character's name
+    displaySelectedCharacterProfile(character); // News function to display selected character profile
+}
+
+function displaySelectedCharacterProfile(character) {
+    const selectedCharacterProfile = 
+document.getElementById("selectedCharacterProfile");
+    const characterImage = document.createElement("img);
+    characterImage.src = character + "Medium.jpeg";
+    characterImage.alt = character;
+    selectedCharacterProfile.innerHTML = ""; // Clear previous content
+    selectedCharacterProfile.appendChild(characterImage);
     startGame(); // Start the game after character selection
     toggleCharacterOpacity(character); // Toggle opacity for selected and unselected characters
 
@@ -77,7 +88,10 @@ function updatePlayerOneName(character) {
         'jax': 'Jax',
         'subzero': 'Sub-Zero'
     }
-
+    const playerName= playerNames[character]; 
+    document.getElementById("plsyerOneNsme").textContent = playerName; // Corrected method to update text content
+}
+    
     // Get the player name based on the selected character
     const playerName = playerNames[character];
     
