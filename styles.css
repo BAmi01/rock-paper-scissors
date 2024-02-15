@@ -3,14 +3,21 @@ body {
     text-align: center;
     background-color:#ed66ae
 }
+
+#characterSelection h1 {
+    font-size: 24px; /* Adjust the font size as needed */
+}
+
 h1 {
     color: #0e050a
 }
+
 button {
     margin: 10px;
     padding: 5px 10px;
     font-size: 16px;
 }
+
 .character {
     display: inline-block;
     margin: 10px;
