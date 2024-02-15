@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color:#ed66ae
+    background-color: #ed66ae;
 }
 
 #characterSelection h1 {
@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-    color: #0e050a
+    color: #0e050a;
 }
 
 button {
@@ -29,13 +29,9 @@ button {
     width: 75px; 
     height: auto;
     margin: 10px;
-    opacity: 1; /* Set default opacity to fully visable */
 }
 
 .character.selected-character img {
-    opacity: 1; /* Ensure selected character is fully visable */
+    opacity: 1; /* Ensure selected character is fully visible */
 }
 
-.character:not(.selected-character) img {
-    opacity: 0.5; /* Fade out unselected characters */
-}
