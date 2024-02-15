@@ -26,7 +26,7 @@ button {
 }
 
 .character img {
-    width: 89px; 
+    width: 75px; 
     height: auto;
     margin: 10px;
     opacity: 1; /* Set default opacity to fully visable */
@@ -37,5 +37,5 @@ button {
 }
 
 .character:not(.selected-character) img {
-    opacity: 0.5; /* Fade out unselecte characters */
+    opacity: 0.5; /* Fade out unselected characters */
 }
