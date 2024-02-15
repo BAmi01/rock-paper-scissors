@@ -53,6 +53,7 @@ function getComputerChoice() {
     return choices[randomIndex];
 }
 
+
 let playerCharacter = ""; // Variable to store player's chosen character
 
 function chooseCharacter(character) {
@@ -60,17 +61,6 @@ function chooseCharacter(character) {
     playerCharacter = character;
     document.getElementById("characterSelection").style.display = "none"; // Hide character selection after choosing 
     updatePlayerOneName(character); // Update Player One name with selescted character's name
-    displaySelectedCharacterProfile(character); // News function to display selected character profile
-}
-
-function displaySelectedCharacterProfile(character) {
-    const selectedCharacterProfile = 
-document.getElementById("selectedCharacterProfile");
-    const characterImage = document.createElement("img);
-    characterImage.src = character + "Medium.jpeg";
-    characterImage.alt = character;
-    selectedCharacterProfile.innerHTML = ""; // Clear previous content
-    selectedCharacterProfile.appendChild(characterImage);
     startGame(); // Start the game after character selection
     toggleCharacterOpacity(character); // Toggle opacity for selected and unselected characters
 
@@ -88,18 +78,19 @@ function updatePlayerOneName(character) {
         'jax': 'Jax',
         'subzero': 'Sub-Zero'
     }
-    const playerName= playerNames[character]; 
-    document.getElementById("plsyerOneNsme").textContent = playerName; // Corrected method to update text content
-}
-    
+
     // Get the player name based on the selected character
     const playerName = playerNames[character];
     
     // Update the player one name element with the selected character's name
-    document.getElementById("playerOneName").textContent = playerName; 
+    document.getElementById("playerOneName").textcontent = playerName; 
 
 }
 
+function startGame() {
+    // Game logic here , using playerCharacter variable 
+
+}    
 
 function toggleCharacterOpacity(selectedCharacter) {
     const characters = document.querySelectorAll(".character");
@@ -107,9 +98,9 @@ function toggleCharacterOpacity(selectedCharacter) {
     characters.forEach(character => {
         const characterName = character.getAttribute("onclick").split("'")[1];
         if (characterName === selectedCharacter) { 
-            character.classList.add("selected-character");
+            character. classList.add("selected-character");
         } else {
-            character.classList.remove("selected-character");
+            character.classList.remove("Selected-character");
 
         }
 
