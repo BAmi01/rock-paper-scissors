@@ -2,6 +2,7 @@
 let playerOneScore = 0;
 let killerbeeScore = 0;
 let tieScore = 0;
+let playerCharacter = ""; // Variable to store player's chosen character
 
 // Function to play the game
 function play(playerChoice) {
@@ -30,7 +31,6 @@ function updateScore(result) {
     document.getElementById("tieScore").textContent = "Tie Score: " + tieScore;
 }
 
-
 // Function to determine the winner
 function determineWinner(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
@@ -53,21 +53,24 @@ function getComputerChoice() {
     return choices[randomIndex];
 }
 
-
-let playerCharacter = ""; // Variable to store player's chosen character
-
 function chooseCharacter(character) {
-    console.log("character chosen:" , character); // Check if this message appears in the console
+    console.log("character chosen:", character);
     playerCharacter = character;
-    document.getElementById("characterSelection").style.display = "none"; // Hide character selection after choosing 
-    updatePlayerOneName(character); // Update Player One name with selescted character's name
-    startGame(); // Start the game after character selection
-    toggleCharacterOpacity(character); // Toggle opacity for selected and unselected characters
+    document.getElementById("characterSelection").style.display = "none";
+    updatePlayerOneName(character);
+    displaySelectedCharacterProfile(character);
+}
 
+function displaySelectedCharacterProfile(character) {
+    const selectedCharacterProfile = document.getElementById("selectedCharacterProfile");
+    const characterImage = document.createElement("img");
+    characterImage.src = character + " Medium.jpeg";
+    characterImage.alt = character;
+    selectedCharacterProfile.innerHTML = "";
+    selectedCharacterProfile.appendChild(characterImage);
 }
 
 function updatePlayerOneName(character) {
-    // Map character names to their corresponding player names
     const playerNames = {
         'baraka': 'Baraka',
         'jade': 'Jade',
@@ -78,36 +81,10 @@ function updatePlayerOneName(character) {
         'jax': 'Jax',
         'subzero': 'Sub-Zero'
     }
-
-    // Get the player name based on the selected character
     const playerName = playerNames[character];
-    
-    // Update the player one name element with the selected character's name
-    document.getElementById("playerOneName").textcontent = playerName; 
-
+    document.getElementById("playerOneName").textContent = playerName;
 }
 
-function startGame() {
-    // Game logic here , using playerCharacter variable 
-
-}    
-
-function toggleCharacterOpacity(selectedCharacter) {
-    const characters = document.querySelectorAll(".character");
-
-    characters.forEach(character => {
-        const characterName = character.getAttribute("onclick").split("'")[1];
-        if (characterName === selectedCharacter) { 
-            character. classList.add("selected-character");
-        } else {
-            character.classList.remove("Selected-character");
-
-        }
-
-     });
-
-}
- 
 // Function to start the game
 function startGame() {
     // Reset scores
