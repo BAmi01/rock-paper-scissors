@@ -2,6 +2,7 @@
 let playerOneScore = 0;
 let killerbeeScore = 0;
 let tieScore = 0;
+let playerCharacter = ""; // Variable to store player's chosen character
 
 // Function to play the game
 function play(playerChoice) {
@@ -25,7 +26,7 @@ function updateScore(result) {
     console.log("KillerBee Score: ", killerbeeScore);
     console.log("Tie Score: ", tieScore);
 
-    document.getElementById("playerOneScore").textContent = "Player Score: " + playerOneScore;
+    document.getElementById("playerOneScore").textContent = "Player One Score: " + playerOneScore;
     document.getElementById("killerbeeScore").textContent = "KillerBee Score: " + killerbeeScore;
     document.getElementById("tieScore").textContent = "Tie Score: " + tieScore;
 }
@@ -52,15 +53,21 @@ function getComputerChoice() {
     return choices[randomIndex];
 }
 
-let playerCharacter = ""; // Variable to store player's chosen character
-
 function chooseCharacter(character) {
     console.log("character chosen:", character);
     playerCharacter = character;
     document.getElementById("characterSelection").style.display = "none";
     updatePlayerOneName(character);
     displaySelectedCharacterProfile(character);
-    updatePlayerOneScoreName(character);
+}
+
+function displaySelectedCharacterProfile(character) {
+    const selectedCharacterProfile = document.getElementById("selectedCharacterProfile");
+    const characterImage = document.createElement("img");
+    characterImage.src = character + " Medium.jpeg";
+    characterImage.alt = character;
+    selectedCharacterProfile.innerHTML = "";
+    selectedCharacterProfile.appendChild(characterImage);
 }
 
 function updatePlayerOneName(character) {
@@ -78,24 +85,18 @@ function updatePlayerOneName(character) {
     document.getElementById("playerOneName").textContent = playerName;
 }
 
-function updatePlayerOneScoreName(character) {
-    const playerNames = {
-        'baraka': 'Baraka',
-        'jade': 'Jade',
-        'scorpion': 'Scorpion',
-        'mileena': 'Mileena',
-        'raiden': 'Raiden',
-        'sindel': 'Sindel',
-        'jax': 'Jax',
-        'subzero': 'Sub-Zero'
-    }
-    const playerName = playerNames[character];
-    document.getElementById("playerOneScore").textContent = playerName + " Score: " + playerOneScore;
+// Function to start the game
+function startGame() {
+    // Reset scores
+    playerOneScore = 0;
+    killerbeeScore = 0;
+    tieScore = 0;
+    updateScore(""); // Update score display
 }
 
-function displaySelectedCharacterProfile(character) {
-    // You can add code here to display the selected character profile under the Player One label.
-    // For example, you can create a div with the selected character's image and details.
+// Function to get a random character for the computer
+function getComputerCharacter() {
+    const remainingCharacters = ["baraka", "jade", "scorpion", "mileena", "raiden", "sindel", "jax", "subzero"].filter(character => character !== playerCharacter);
+    const randomIndex = Math.floor(Math.random() * remainingCharacters.length);
+    return remainingCharacters[randomIndex];
 }
-
-// Other functions...
