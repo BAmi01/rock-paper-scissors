@@ -8,22 +8,48 @@
 </head>
 <body>
     <h1>Rock Paper Scissors (Mortal Kombat Edition)</h1>
+    <div id="characterSelection">
+        <h1>Choose your fighter:</h1>
+        <div class="character" onclick="chooseCharacter('baraka')">    
+            <img src="/Users/BrittnieAmanda/Desktop/everything tech/GitHub/rock-paper-scissor-game/html-rps/baraka Medium.jpeg" alt="Baraka">
+        </div>
+        <div class="character" onclick="chooseCharacter('jade')">
+            <img src="/Users/BrittnieAmanda/Desktop/everything tech/GitHub/rock-paper-scissor-game/html-rps/jade Medium.jpeg" alt="Jade">
+        </div>
+        <div class="character" onclick="chooseCharacter('scorpion')">
+            <img src="/Users/BrittnieAmanda/Desktop/everything tech/GitHub/rock-paper-scissor-game/html-rps/scorpion Medium.jpeg" alt="Scorpion">
+        </div>
+        <div class="character" onclick="chooseCharacter('mileena')">
+            <img src="/Users/BrittnieAmanda/Desktop/everything tech/GitHub/rock-paper-scissor-game/html-rps/mileena Medium.jpeg" alt="Mileena">
+        </div>
+        <div class="character" onclick="chooseCharacter('raiden')">
+            <img src="/Users/BrittnieAmanda/Desktop/everything tech/GitHub/rock-paper-scissor-game/html-rps/raiden Medium.jpeg" alt="Raiden">
+        </div>
+        <div class="character" onclick="chooseCharacter('sindel')">
+            <img src="/Users/BrittnieAmanda/Desktop/everything tech/GitHub/rock-paper-scissor-game/html-rps/sindel Medium.jpeg" alt="Sindel">
+        </div>
+        <div class="character" onclick="chooseCharacter('jax')">
+            <img src="/Users/BrittnieAmanda/Desktop/everything tech/GitHub/rock-paper-scissor-game/html-rps/jax Medium.jpeg" alt="Jax">
+        </div>
+        <div class="character" onclick="chooseCharacter('subzero')">
+            <img src="/Users/BrittnieAmanda/Desktop/everything tech/GitHub/rock-paper-scissor-game/html-rps/subzero Medium.jpeg" alt="Sub-Zero">
+        </div>
+    </div>
+    <div id="playerOne">
+        <h3>Player Name:</h3>
+        <div id="playerOneName">Player One</div>
+    </div>
+
     <div id="gameResults">Result: </div>
-    <div id="playerOneScore">Player One Score: 0</div>
-    <div id="computerScore">Computer Score: 0</div>
+    <div id="playerOneScore">Player Score: 0</div>
+    <div id="killerbeeScore">KillerBee Score: 0</div>
     <div id="tieScore">Tie Score: 0</div>
-
-    <div class="button-containers">
-        <button onclick="play('rock')">Rock</button>
-        <button onclick="play('paper')">Paper</button>
-        <button onclick="play('scissors')">Scissors</button>
-    </div>
-
-    <div class="gif-container">
-        <div class="tenor-gif-embed" data-postid="3295879171210440663" data-share-method="host" data-aspect-ratio="1.2266" data-width="100%"><a href="https://tenor.com/view/mortal-kombat-1-raiden-lightning-mk-1-mortal-kombat-gif-3295879171210440663">Mortal Kombat 1 Raiden GIF</a>from <a href="https://tenor.com/search/mortal+kombat+1-gifs">Mortal Kombat 1 GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-         <img src="https://tenor.com/d5Dkbe10rLT.gif" alt="Mortal Kombat GIF">   
-    </div>
-
+    <button onclick="play('rock')">Rock</button>
+    <button onclick="play('paper')">Paper</button>
+    <button onclick="play('scissors')">Scissors</button>
+    
     <script src="script.js"></script>
 </body>
 </html>
+
+
