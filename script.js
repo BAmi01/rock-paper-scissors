@@ -58,7 +58,7 @@ function chooseCharacter(character) {
     playerCharacter = character;
     document.getElementById("characterSelection").style.display = "none";
     updatePlayerOneName(character);
-    displaySelectedCharacterProfile(character);
+    displaySelectedCharacterProfile(character); // New function to display selected character profile
 }
 
 function displaySelectedCharacterProfile(character) {
@@ -66,7 +66,7 @@ function displaySelectedCharacterProfile(character) {
     const characterImage = document.createElement("img");
     characterImage.src = character + " Medium.jpeg";
     characterImage.alt = character;
-    selectedCharacterProfile.innerHTML = "";
+    selectedCharacterProfile.innerHTML = ""; // Clear previous content
     selectedCharacterProfile.appendChild(characterImage);
 }
 
@@ -82,7 +82,7 @@ function updatePlayerOneName(character) {
         'subzero': 'Sub-Zero'
     }
     const playerName = playerNames[character];
-    document.getElementById("playerOneName").textContent = playerName;
+    document.getElementById("playerOneName").textContent = playerName; // Corrected method to update text content
 }
 
 // Function to start the game
