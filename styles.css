@@ -26,9 +26,9 @@ button {
 }
 
 .character img {
-    width: 90px; 
+    width: 100px; 
     height: auto;
-    margin: 10px;
+    margin: 50px;
 }
 
 .character.selected-character img {
